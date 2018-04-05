@@ -1,0 +1,61 @@
+.PortsContainer {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.PortsContainer .TableList {
+    display: table;
+}
+
+.PortsContainer .TableListRow > * {
+    display: table-cell;
+}
+
+.PortsContainer .TableListRow {
+    line-height: 50px;
+}
+
+.PortsContainer .TableList input {
+    width: 100% !important;
+}
+
+.PortsContainer .TableList.Form .TableListRow input[readonly] {
+    border: 0;
+    background: transparent;
+    padding: 0;
+}
+
+.PortsContainer .TableListRow > div:nth-child(1),
+.PortsContainer .TableListRow > div:nth-child(2),
+.PortsContainer .TableListRow > div:nth-child(3) {
+    width: 33%;
+    padding: 0 0 0 30px;
+}
+
+.PortsContainer .TableListRow > div:last-of-type {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.PortsContainer .RemovePort,
+.PortsContainer .RemovePort * {
+    cursor: pointer;
+}
+
+.PortsContainer .RemovePort svg {
+    vertical-align: middle;
+    width: 12px;
+}
+
+.PortsContainer .RemovePort svg path {
+    fill: #c7c4c4;
+}
+
+.PortsContainer .RemovePort:hover svg path {
+    fill: #9f9c9c;
+}
+
+.PortsContainer .Bottom {
+    text-align: center;
+    margin: 15px 0 20px;
+}
