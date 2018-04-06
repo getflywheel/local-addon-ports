@@ -363,5 +363,5 @@ There is no going back after this is done.`
 
 /* Credit: https://stackoverflow.com/a/28191966 */
 function getKeyByValue (object, value) {
-	return Object.keys(object).find(key => object[key] === value);
+	return Object.keys(object).find(key => object[key] == value);
 }
