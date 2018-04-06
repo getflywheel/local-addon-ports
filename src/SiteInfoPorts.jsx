@@ -298,19 +298,22 @@ There is no going back after this is done.`
 						</li>
 						{
 							this.state.ports.map((port, index) => {
+								const isRequiredPort = ['HTTP', 'HTTPS', 'MAILCATCHER', 'MYSQL'].includes(port.name);
 								let ref = 'ref' in port ? port.ref : `${port.name}:${port.containerPort}:${port.hostPort}`;
 
 								return <li className="TableListRow" key={index}>
 									<div>
 										<input type="text" value={port.name} placeholder="Port Name"
 										       ref={`${ref}-port-name`}
-										       onChange={this.portOnChange.bind(this, 'name', index)}/>
+										       onChange={this.portOnChange.bind(this, 'name', index)}
+										       readOnly={isRequiredPort}/>
 									</div>
 
 									<div>
 										<input type="number" value={port.containerPort} placeholder="Container Port"
 										       ref={`${ref}-container-port`} className="ContainerPort"
-										       onChange={this.portOnChange.bind(this, 'containerPort', index)}/>
+										       onChange={this.portOnChange.bind(this, 'containerPort', index)}
+											   readOnly={isRequiredPort}/>
 									</div>
 
 									<div>
@@ -320,12 +323,15 @@ There is no going back after this is done.`
 									</div>
 
 									<div>
-										<span className="RemovePort" onClick={this.removePort.bind(this, index)}>
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8">
-												<path
-													d="M7.71 6.29L5.41 4l2.3-2.29A1 1 0 0 0 6.29.29L4 2.59 1.71.29A1 1 0 1 0 .29 1.71L2.59 4 .29 6.29a1 1 0 1 0 1.42 1.42L4 5.41l2.29 2.3a1 1 0 0 0 1.42-1.42z"/>
-											</svg>
-										</span>
+										{
+											!isRequiredPort &&
+												<span className="RemovePort" onClick={this.removePort.bind(this, index)}>
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8">
+														<path
+															d="M7.71 6.29L5.41 4l2.3-2.29A1 1 0 0 0 6.29.29L4 2.59 1.71.29A1 1 0 1 0 .29 1.71L2.59 4 .29 6.29a1 1 0 1 0 1.42 1.42L4 5.41l2.29 2.3a1 1 0 0 0 1.42-1.42z"/>
+													</svg>
+												</span>
+										}
 									</div>
 								</li>
 							})
