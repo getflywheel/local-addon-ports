@@ -60,14 +60,14 @@ module.exports = function (context) {
 
 			try {
 
-				Object.keys(containerInfo.NetworkSettings.Ports).forEach(port => {
+				Object.keys(containerInfo.HostConfig.PortBindings).forEach(port => {
 
-					let portInfo = containerInfo.NetworkSettings.Ports[port][0];
+					let portInfo = containerInfo.HostConfig.PortBindings[port][0];
 
 					const containerPort = port.replace('/tcp', '');
 
 					ports.push({
-						name: getKeyByValue(site.ports, parseInt(portInfo.HostPort)) || '',
+						name: getKeyByValue(site.ports, portInfo.HostPort) || '',
 						hostPort: portInfo.HostPort,
 						containerPort,
 					});
