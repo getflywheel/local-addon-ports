@@ -4,6 +4,10 @@
 
 ## Installation
 
+### Requirements
+
+* Local 2.3.0 or newer
+
 ### Downloading a Release
 
 1. Download the [latest release](https://github.com/getflywheel/local-addon-volumes/releases)
