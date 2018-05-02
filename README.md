@@ -1,6 +1,6 @@
-# Synopsis [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/getflywheel/local-addon-volumes/pulls/)
+# Synopsis [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/getflywheel/local-addon-ports/pulls/)
 
-![Local Addon: Volumes Screenshot](/screenshot.png?raw=true)
+![Local Addon: Ports Screenshot](/screenshot.png?raw=true)
 
 ## Installation
 
@@ -8,12 +8,12 @@
 
 * Local 2.3.0 or newer
 
-### Downloading a Release
+### Downloading
 
-1. Download the [latest release](https://github.com/getflywheel/local-addon-volumes/releases)
+1. Download the [latest version](https://github.com/getflywheel/local-addon-ports/archive/master.zip)
 2. Go to Settings » Add-ons inside Local (1.1.0 or newer) and click on Install Add-on
 3. Browse to the downloaded release
-4. Check the checkbox by the Volumes addon to enable it
+4. Check the checkbox by the Ports addon to enable it
 5. Restart Local
 
 ### Cloning
