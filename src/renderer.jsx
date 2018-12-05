@@ -1,16 +1,13 @@
-'use strict';
+import React from 'react';
+import SiteInfoPorts from './SiteInfoPorts';
 
-module.exports = function (context) {
+export default function (context) {
 
 	const hooks = context.hooks;
-	const React = context.React;
-	const {Route} = context.ReactRouter;
+	const { Route } = context.ReactRouter;
 
-	const SiteInfoPorts = require('./SiteInfoPorts')(context);
-
-	hooks.addContent('routesSiteInfo', () => {
-		return <Route key="site-info-ports" path="/site-info/:siteID/ports" component={SiteInfoPorts}/>
-	});
+	hooks.addContent('routesSiteInfo', () => <Route key="site-info-ports" path="/site-info/:siteID/ports"
+													render={(props) => <SiteInfoPorts {...props} sendEvent={context.events.send} docker={context.docker.docker}/>} notifier={context.notifier} />);
 
 	hooks.addFilter('siteInfoMoreMenu', function (menu, site) {
 
@@ -19,11 +16,12 @@ module.exports = function (context) {
 			enabled: !this.context.router.isActive(`/site-info/${site.id}/ports`),
 			click: () => {
 				context.events.send('goToRoute', `/site-info/${site.id}/ports`);
-			}
+			},
 		});
 
 		return menu;
 
 	});
 
-};
+}
+
