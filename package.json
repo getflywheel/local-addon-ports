@@ -2,10 +2,13 @@
   "name": "local-addon-ports",
   "productName": "Ports Manager",
   "version": "1.0.0",
-  "author": "Fancy Chap, Inc.",
+  "author": "Flywheel",
+  "slug": "ports",
   "keywords": [
     "local-addon"
   ],
+  "bgColor": "#ddeefd",
+  "icon": "icon.svg",
   "description": "Add, remove, and modify port mappings for Local by Flywheel site containers.",
   "renderer": "lib/renderer.js",
   "repository": {
